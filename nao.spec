@@ -7,7 +7,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://www.openspace.linux.pl/data/%{name}-%{version}.tar.bz2
 # Source0-md5:	7b45961ad79a3597be55171f16940ccc
-URL:		http://www.openspace.linux.pl
+URL:		http://www.openspace.linux.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fox-devel >= 1.4.0
@@ -77,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%config %{_sysconfdir}/openspacerc
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/openspacerc
 %{_sysconfdir}/mimeapp
 %attr(755,root,root) %{_bindir}/%{name}
 %{_libdir}/%{name}
