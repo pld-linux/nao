@@ -1,5 +1,5 @@
 Summary:	OpenSpace - powerfull and flexible file manager
-Summary(pl):	OpenSpace - potê¿ny i elastyczny menad¿er plików
+Summary(pl):	OpenSpace - potê¿ny i elastyczny zarz±dca plików
 Name:		openspace
 Version:	0.1.0
 Release:	0.1
@@ -36,25 +36,23 @@ OpenSpace are:
  - Drag and Drop support compatible with KDE and GNOME applications.
 
 %description -l pl
-
 OpenSpace jest potê¿nym, elastycznym oraz ca³kowicie konfigurowalnym
-manad¿erem plików dla systemów Uniksowych, napisanym przy u¿yciu
-biblioteki FOX. G³ówne jego cech to:
+zarz±dc± plików dla systemów uniksowych, napisanym przy u¿yciu
+biblioteki FOX. G³ówne jego cechy to:
 
- - Wsparcie dla zarówno dwupanelowego jak i jednopanelowego trybu
-   pracy.
+ - Obs³uga zarówno dwupanelowego jak i jednopanelowego trybu pracy.
  - Graficzna konfiguracja.
  - Potê¿ny system rozpoznawania plików pozwala na konfiguracjê sposobu
    przedstawiania ró¿nych typów plików (kolory, ikony), oraz akcji im
    przypisanej.
  - Czasoch³onne operacje, takie jak przenoszenie czy kopiowanie, s±
-   uruchamiane w oddzielnym w±tku, co pozwala na korzystanie z menad¿era
+   uruchamiane w oddzielnym w±tku, co pozwala na korzystanie z zarz±dcy
    podczas tych czynno¶ci.
- - Rozsze¿alno¶æ - dwa typy pluginów - mo¿na je ³atwo instalowaæ
+ - Rozszerzalno¶æ - dwa typy wtyczek - mo¿na je ³atwo instalowaæ
    korzystaj±c z menu konfiguracyjnego.
- - Plugin dla wirtualnego systemu plików. Mo¿esz u¿ywaæ ftp, oraz
+ - Wtyczka dla wirtualnego systemu plików. Mo¿na u¿ywaæ FTP oraz
    archiwów jak lokalnych plików.
- - Wsparcie dla przeci±gnij i upu¶æ kompatybilne z aplikacjami KDE i
+ - Obs³uga "przeci±gnij i upu¶æ" kompatybilna z aplikacjami KDE i
    GNOME.
 
 %prep
