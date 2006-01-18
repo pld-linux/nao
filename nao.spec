@@ -1,12 +1,12 @@
 Summary:	OpenSpace - powerfull and flexible file manager
 Summary(pl):	OpenSpace - potê¿ny i elastyczny zarz±dca plików
 Name:		openspace
-Version:	0.1.0
+Version:	0.1.1
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.openspace.linux.pl/data/%{name}-%{version}.tar.bz2
-# Source0-md5:	7b45961ad79a3597be55171f16940ccc
+# Source0-md5:	a591f91a30784f155f04c3f496eb4451
 URL:		http://www.openspace.linux.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
