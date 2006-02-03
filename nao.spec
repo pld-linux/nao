@@ -1,4 +1,4 @@
-Summary:	OpenSpace - powerfull and flexible file manager
+Summary:	OpenSpace - powerful and flexible file manager
 Summary(pl):	OpenSpace - potê¿ny i elastyczny zarz±dca plików
 Name:		openspace
 Version:	0.1.1
