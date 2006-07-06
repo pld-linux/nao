@@ -1,26 +1,28 @@
-Summary:	OpenSpace - powerful and flexible file manager
-Summary(pl):	OpenSpace - potê¿ny i elastyczny zarz±dca plików
-Name:		openspace
-Version:	0.2.0
+Summary:	nao - powerful and flexible file manager
+Summary(pl):	nao - potê¿ny i elastyczny zarz±dca plików
+Name:		nao
+Version:	0.2.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.openspace.linux.pl/data/%{name}-%{version}.tar.bz2
-# Source0-md5:	4ee22fba25dffe24f668054844843549
-URL:		http://www.openspace.linux.pl/
+Source0:	http://nao.linux.pl/data/%{name}-%{version}.tar.bz2
+# Source0-md5:	55cb4f2447e0ccfa37ba0ad13eb74c03
+URL:		http://nao.linux.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fox-devel >= 1.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	libpng-devel
+BuildRequires:	libssh-devel
 Requires:	fox >= 1.4.0
+Obsoletes:	openspace
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-OpenSpace is powerful, flexible, and utterly configurable file manager
+nao is powerful, flexible, and utterly configurable file manager
 for UNIX systems, written using the FOX toolkit. Main features of
-OpenSpace are:
+nao are:
 
  - Support for two panel view and single panel view.
  - Graphically configurable.
@@ -36,7 +38,7 @@ OpenSpace are:
  - Drag and Drop support compatible with KDE and GNOME applications.
 
 %description -l pl
-OpenSpace jest potê¿nym, elastycznym oraz ca³kowicie konfigurowalnym
+nao jest potê¿nym, elastycznym oraz ca³kowicie konfigurowalnym
 zarz±dc± plików dla systemów uniksowych, napisanym przy u¿yciu
 biblioteki FOX. G³ówne jego cechy to:
 
@@ -77,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/openspacerc
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/nao.conf
 %{_sysconfdir}/mimeapp
 %attr(755,root,root) %{_bindir}/%{name}
 %{_libdir}/%{name}
