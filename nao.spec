@@ -11,18 +11,17 @@ URL:		http://nao.linux.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fox-devel >= 1.4.0
-BuildRequires:	libtool
-BuildRequires:	libxml2-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libssh-devel
+BuildRequires:	libtool
+BuildRequires:	libxml2-devel
 Requires:	fox >= 1.4.0
 Obsoletes:	openspace
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-nao is powerful, flexible, and utterly configurable file manager
-for UNIX systems, written using the FOX toolkit. Main features of
-nao are:
+nao is powerful, flexible, and utterly configurable file manager for
+UNIX systems, written using the FOX toolkit. Main features of nao are:
 
  - Support for two panel view and single panel view.
  - Graphically configurable.
