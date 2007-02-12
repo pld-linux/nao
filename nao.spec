@@ -1,5 +1,5 @@
 Summary:	nao - powerful and flexible file manager
-Summary(pl):	nao - potê¿ny i elastyczny zarz±dca plików
+Summary(pl.UTF-8):   nao - potÄ™Å¼ny i elastyczny zarzÄ…dca plikÃ³w
 Name:		nao
 Version:	0.2.1
 Release:	1
@@ -36,24 +36,24 @@ UNIX systems, written using the FOX toolkit. Main features of nao are:
    compressed files (tar.bz2,tar.gz) - you can use them like local files.
  - Drag and Drop support compatible with KDE and GNOME applications.
 
-%description -l pl
-nao jest potê¿nym, elastycznym oraz ca³kowicie konfigurowalnym
-zarz±dc± plików dla systemów uniksowych, napisanym przy u¿yciu
-biblioteki FOX. G³ówne jego cechy to:
+%description -l pl.UTF-8
+nao jest potÄ™Å¼nym, elastycznym oraz caÅ‚kowicie konfigurowalnym
+zarzÄ…dcÄ… plikÃ³w dla systemÃ³w uniksowych, napisanym przy uÅ¼yciu
+biblioteki FOX. GÅ‚Ã³wne jego cechy to:
 
- - Obs³uga zarówno dwupanelowego jak i jednopanelowego trybu pracy.
+ - ObsÅ‚uga zarÃ³wno dwupanelowego jak i jednopanelowego trybu pracy.
  - Graficzna konfiguracja.
- - Potê¿ny system rozpoznawania plików pozwala na konfiguracjê sposobu
-   przedstawiania ró¿nych typów plików (kolory, ikony), oraz akcji im
+ - PotÄ™Å¼ny system rozpoznawania plikÃ³w pozwala na konfiguracjÄ™ sposobu
+   przedstawiania rÃ³Å¼nych typÃ³w plikÃ³w (kolory, ikony), oraz akcji im
    przypisanej.
- - Czasoch³onne operacje, takie jak przenoszenie czy kopiowanie, s±
-   uruchamiane w oddzielnym w±tku, co pozwala na korzystanie z zarz±dcy
-   podczas tych czynno¶ci.
- - Rozszerzalno¶æ - dwa typy wtyczek - mo¿na je ³atwo instalowaæ
-   korzystaj±c z menu konfiguracyjnego.
- - Wtyczka dla wirtualnego systemu plików. Mo¿na u¿ywaæ FTP oraz
-   archiwów jak lokalnych plików.
- - Obs³uga "przeci±gnij i upu¶æ" kompatybilna z aplikacjami KDE i
+ - CzasochÅ‚onne operacje, takie jak przenoszenie czy kopiowanie, sÄ…
+   uruchamiane w oddzielnym wÄ…tku, co pozwala na korzystanie z zarzÄ…dcy
+   podczas tych czynnoÅ›ci.
+ - RozszerzalnoÅ›Ä‡ - dwa typy wtyczek - moÅ¼na je Å‚atwo instalowaÄ‡
+   korzystajÄ…c z menu konfiguracyjnego.
+ - Wtyczka dla wirtualnego systemu plikÃ³w. MoÅ¼na uÅ¼ywaÄ‡ FTP oraz
+   archiwÃ³w jak lokalnych plikÃ³w.
+ - ObsÅ‚uga "przeciÄ…gnij i upuÅ›Ä‡" kompatybilna z aplikacjami KDE i
    GNOME.
 
 %prep
