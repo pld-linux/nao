@@ -1,5 +1,5 @@
 Summary:	nao - powerful and flexible file manager
-Summary(pl.UTF-8):   nao - potężny i elastyczny zarządca plików
+Summary(pl.UTF-8):	nao - potężny i elastyczny zarządca plików
 Name:		nao
 Version:	0.2.1
 Release:	1
