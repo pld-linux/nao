@@ -9,3 +9,32 @@
 +	msgBox.execute();
  		
  }
+--- nao-0.4.0_rc2/src/fox/FoxGuiThreadSynchronization.hpp	2007-03-30 19:55:44.000000000 +0200
++++ /home/users/undefine/FoxGuiThreadSynchronization.hpp	2007-04-03 21:50:15.765586658 +0200
+@@ -148,7 +148,7 @@
+ 
+ 
+ template<typename T>
+-long onGuiSignal(FXObject * obj, FXSelector sel, void * ptr)
++long onGuiSignalX(FXObject * obj, FXSelector sel, void * ptr)
+ {
+ 	tt<T> *t=(tt<T>*)ptr;
+ 	t->returnValue=t->fun();	
+@@ -158,7 +158,7 @@
+ }
+ 
+ template<>
+-long onGuiSignal<void>(FXObject * obj, FXSelector sel, void * ptr)
++long onGuiSignalX<void>(FXObject * obj, FXSelector sel, void * ptr)
+ {
+ 	tt<void> *t=(tt<void>*)ptr;
+ 	t->fun();
+@@ -180,7 +180,7 @@
+ template<typename T>
+ 	long onGuiSignal ( FXObject * obj, FXSelector sel, void *ptr )
+ 	{
+-		::onGuiSignal<T>(obj,sel,ptr);
++		::onGuiSignalX<T>(obj,sel,ptr);
+ 	}
+ 
+ 	enum
