@@ -3,8 +3,9 @@
 @@ -1,8 +1,12 @@
  [Desktop Entry]
  Name=Nao File Manager
+-Comment=File Manger
 +Name[pl]=Menadżer plików Nao
- Comment=File Manger
++Comment=File Manager
 +Comment[pl]=Menedżer plików
  Exec=nao
  Icon=nao.png
