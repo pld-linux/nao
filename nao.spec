@@ -1,18 +1,28 @@
+%bcond_with	python		# python plugins (unknown requires)
+%bcond_without	ssh		# sftp virtual file system
+
+%define		_rc	rc2
 Summary:	nao - powerful and flexible file manager
 Summary(pl.UTF-8):	nao - potężny i elastyczny zarządca plików
 Name:		nao
-Version:	0.2.1
-Release:	1
-License:	GPL
+Version:	0.4.0
+Release:	0.%{rc}.0.1
+License:	GPL v2
 Group:		X11/Applications
-Source0:	http://nao.linux.pl/data/%{name}-%{version}.tar.bz2
-# Source0-md5:	55cb4f2447e0ccfa37ba0ad13eb74c03
+Source0:	http://nao.linux.pl/data/%{name}-%{version}_%{_rc}.tar.bz2
+# Source0-md5:	62cdee0d0d8eeef82e60d75220370ec4
 URL:		http://nao.linux.pl/
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	boost-any-devel
+BuildRequires:	boost-thread-devel
+BuildRequires:	boost-mem_fn-devel
+BuildRequires:	boost-program_options-devel
+BuildRequires:	boost-ref-devel
+BuildRequires:	boost-filesystem-devel
+BuildRequires:	boost-regex-devel
+BuildRequires:	boost-python-devel
 BuildRequires:	fox-devel >= 1.4.0
 BuildRequires:	libpng-devel
-BuildRequires:	libssh-devel
+%{?with_ssh:BuildRequires:  	libssh-devel}
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 Requires:	fox >= 1.4.0
@@ -57,13 +67,12 @@ biblioteki FOX. Główne jego cechy to:
    GNOME.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}_%{_rc}
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure
+%configure \
+	%{?with_ssh:--enable-sshvfs} \
+	%{?with_python:--enable-python}
 %{__make}
 
 %install
