@@ -1,0 +1,11 @@
+--- nao-0.4.0_rc2/src/fox/FoxMainWindow.cpp~	2007-03-30 19:55:44.000000000 +0200
++++ nao-0.4.0_rc2/src/fox/FoxMainWindow.cpp	2007-04-03 19:12:07.241299421 +0200
+@@ -397,6 +397,7 @@
+ 	string msg = "Nao file manager " + string( VERSION ) + "\n\nby Mateusz Dworak (http://nao.linux.pl)\n\npublished under the GNU General Public License\nUsing the FOX C++ GUI Library (http://www.fox-tookit.org) \n\nDefault icon set: Gnome-mix\nLogo: Patrycjusz Szubryt (http://3ga.pl)";
+ 
+ 	//FXMessageBox::information (getApp(), MBOX_OK, "about", msg.c_str());
+-	FXMessageBox (getApp(), "about", msg.c_str(), foxIconManager.get("logo"),MBOX_OK).execute();
++	FXMessageBox msgBox(getApp(), "about", msg.c_str(), foxIconManager.get("logo"),MBOX_OK);
++	msgBox.execute();
+ 		
+ }
