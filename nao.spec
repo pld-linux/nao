@@ -1,18 +1,16 @@
 %bcond_with	python		# python plugins (unknown requires)
 %bcond_without	ssh		# sftp virtual file system
 
-%define		_rc	rc2
 Summary:	nao - powerful and flexible file manager
 Summary(pl.UTF-8):	nao - potężny i elastyczny zarządca plików
 Name:		nao
 Version:	0.4.0
-Release:	0.%{_rc}.0.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://nao.linux.pl/data/%{name}-%{version}_%{_rc}.tar.bz2
-# Source0-md5:	62cdee0d0d8eeef82e60d75220370ec4
-Patch0:		%{name}-gcc3.patch
-Patch1:		%{name}-desktop.patch
+Source0:	http://nao.linux.pl/data/%{name}-%{version}.tar.bz2
+# Source0-md5:	a52a83148a160a5eb434f1f154bf4cf7
+Patch0:		%{name}-desktop.patch
 URL:		http://nao.linux.pl/
 BuildRequires:	boost-any-devel
 BuildRequires:	boost-thread-devel
@@ -69,9 +67,8 @@ biblioteki FOX. Główne jego cechy to:
    GNOME.
 
 %prep
-%setup -q -n %{name}-%{version}_%{_rc}
+%setup -q -n %{name}-%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %configure \
