@@ -1,6 +1,8 @@
+#
+# Conditional build:
 %bcond_with	python		# python plugins (unknown requires)
 %bcond_without	ssh		# sftp virtual file system
-
+#
 Summary:	nao - powerful and flexible file manager
 Summary(pl.UTF-8):	nao - potężny i elastyczny zarządca plików
 Name:		nao
@@ -67,7 +69,7 @@ biblioteki FOX. Główne jego cechy to:
    GNOME.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 %patch0 -p1
 
 %build
