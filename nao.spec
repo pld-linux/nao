@@ -2,6 +2,7 @@
 # Conditional build:
 %bcond_with	python		# python plugins (unknown requires)
 %bcond_without	ssh		# sftp virtual file system
+%bcond_without	ssl		# ftp over ssl support
 #
 Summary:	nao - powerful and flexible file manager
 Summary(pl.UTF-8):	nao - potężny i elastyczny zarządca plików
@@ -15,18 +16,19 @@ Source0:	http://nao.linux.pl/data/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-desktop.patch
 URL:		http://nao.linux.pl/
 BuildRequires:	boost-any-devel
-BuildRequires:	boost-thread-devel
+BuildRequires:	boost-filesystem-devel
 BuildRequires:	boost-mem_fn-devel
 BuildRequires:	boost-program_options-devel
+%{?with_python:BuildRequires:	boost-python-devel}
 BuildRequires:	boost-ref-devel
-BuildRequires:	boost-filesystem-devel
 BuildRequires:	boost-regex-devel
-BuildRequires:	boost-python-devel
+BuildRequires:	boost-thread-devel
 BuildRequires:	fox-devel >= 1.4.0
 BuildRequires:	libpng-devel
 %{?with_ssh:BuildRequires:  	libssh-devel}
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
+%{?with_ssl:BuildRequires:  	openssl-devel}
 Requires:	fox >= 1.4.0
 Obsoletes:	openspace
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -75,6 +77,7 @@ biblioteki FOX. Główne jego cechy to:
 %build
 %configure \
 	%{?with_ssh:--enable-sshvfs} \
+	%{?with_ssh:--enable-ssl} \
 	%{?with_python:--enable-python}
 %{__make}
 
