@@ -1,0 +1,62 @@
+diff -Nur nao-0.4.1.orig/configure.in nao-0.4.1.as-needed/configure.in
+--- nao-0.4.1.orig/configure.in	2007-05-11 13:05:59.000000000 +0000
++++ nao-0.4.1.as-needed/configure.in	2007-05-19 15:12:56.000000000 +0000
+@@ -106,8 +106,8 @@
+ 		 AC_MSG_ERROR("boot python not found")
+ 	fi
+ 	
+-	PYTHON_LDFLAGS="-l$PYTHON_LIB"
+-	AC_SUBST(PYTHON_LDFLAGS)
++	PYTHON_LIBS="-l$PYTHON_LIB"
++	AC_SUBST(PYTHON_LIBS)
+ 	
+ 	PYTHON_CPPFLAGS="-I$PYTHON_INCLUDE_DIR"
+ 	AC_SUBST(PYTHON_CPPFLAGS)
+@@ -146,17 +146,19 @@
+   		AC_MSG_ERROR("xml2 library not found") 
+         fi
+ 
+-
+ AC_CHECK_LIB(xml2, xmlSaveFormatFileEnc, [], [AC_MSG_ERROR([xml2 library not found])])
+ 
++XML2_LIBS = `xml2-config --libs`
++AC_SUBST([XML2_LIBS])
++
+ AC_CHECK_LIB(magic,magic_load,[AC_DEFINE([HAVE_LIBMAGIC],1,[have libmagic]) LIBS="-lmagic $LIBS"],)
+ 
+ 
+ GUI="fox"
+-GUI_LDFLAGS=`$FOX_CONFIG --libs`
++GUI_LIBS=`$FOX_CONFIG --libs`
+ 
+ AC_SUBST([GUI])
+-AC_SUBST([GUI_LDFLAGS])
++AC_SUBST([GUI_LIBS])
+ 
+ 
+ AC_CHECK_HEADERS(boost/filesystem/path.hpp,,[AC_MSG_ERROR([You need boost/filesystem/path.hpp from the boost library])])
+diff -Nur nao-0.4.1.orig/src/Makefile.am nao-0.4.1.as-needed/src/Makefile.am
+--- nao-0.4.1.orig/src/Makefile.am	2007-05-10 19:28:50.000000000 +0000
++++ nao-0.4.1.as-needed/src/Makefile.am	2007-05-19 15:14:30.000000000 +0000
+@@ -24,8 +24,7 @@
+ 
+ 
+  # the library search path.
+-nao_LDFLAGS = $(all_libraries) @BOOST_LDFLAGS@ @BOOST_FILESYSTEM_LIB@ @BOOST_PROGRAM_OPTIONS_LIB@ @BOOST_THREAD_LIB@ \
+-	@BOOST_REGEX_LIB@ @BOOST_PYTHON_LIB@  `xml2-config --libs` -lpthread -lrt @GUI_LDFLAGS@  -ldl -rdynamic @PYTHON_LDFLAGS@
++nao_LDFLAGS = @BOOST_LDFLAGS@ -rdynamic
+ 
+  #-lTnFOX-0.86 `$(FOX_CONFIG) --libs`
+ 
+@@ -39,7 +38,9 @@
+ 
+ SUBDIRS = xdgmime fox commands libfactory vfs
+  #@GUI@ 
+-nao_LDADD = $(top_builddir)/src/xdgmime/libxdgmime.a \
+-	$(top_builddir)/src/libfactory/libfactory.a fox/lib@GUI@gui.a vfs/libVfsLocal.a
+ 
++nao_LDADD = $(top_builddir)/src/xdgmime/libxdgmime.a \
++	$(top_builddir)/src/libfactory/libfactory.a fox/lib@GUI@gui.a vfs/libVfsLocal.a \
++	$(all_libraries) @BOOST_FILESYSTEM_LIB@ @BOOST_PROGRAM_OPTIONS_LIB@ @BOOST_THREAD_LIB@ \
++	@BOOST_REGEX_LIB@ @BOOST_PYTHON_LIB@ @GUI_LIBS@ @PYTHON_LIBS@ @XML2_LIBS@ -lpthread -lrt -ldl
+ 
