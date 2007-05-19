@@ -16,6 +16,8 @@ Source0:	http://nao.linux.pl/data/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-as-needed.patch
 URL:		http://nao.linux.pl/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	boost-any-devel
 BuildRequires:	boost-filesystem-devel
 BuildRequires:	boost-mem_fn-devel
