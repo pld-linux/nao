@@ -14,6 +14,7 @@ Group:		X11/Applications
 Source0:	http://nao.linux.pl/data/%{name}-%{version}.tar.bz2
 # Source0-md5:	b113c79af37fae2f6a7b12496900952e
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-as-needed.patch
 URL:		http://nao.linux.pl/
 BuildRequires:	boost-any-devel
 BuildRequires:	boost-filesystem-devel
@@ -32,8 +33,6 @@ BuildRequires:	libxml2-devel
 Requires:	fox >= 1.4.0
 Obsoletes:	openspace
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		filterout_ld	-Wl,--as-needed
 
 %description
 nao is powerful, flexible, and utterly configurable file manager for
@@ -75,8 +74,13 @@ biblioteki FOX. Główne jego cechy to:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__automake}
 %configure \
 	%{?with_ssh:--enable-sshvfs} \
 	%{?with_ssh:--enable-ssl} \
