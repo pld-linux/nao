@@ -33,6 +33,8 @@ Requires:	fox >= 1.4.0
 Obsoletes:	openspace
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		filterout_ld	-Wl,--as-needed
+
 %description
 nao is powerful, flexible, and utterly configurable file manager for
 UNIX systems, written using the FOX toolkit. Main features of nao are:
