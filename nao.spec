@@ -18,14 +18,8 @@ Patch1:		%{name}-as-needed.patch
 URL:		http://nao.linux.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	boost-any-devel
-BuildRequires:	boost-filesystem-devel
-BuildRequires:	boost-mem_fn-devel
-BuildRequires:	boost-program_options-devel
+BuildRequires:	boost-devel >= 1.35.0
 %{?with_python:BuildRequires:	boost-python-devel}
-BuildRequires:	boost-ref-devel
-BuildRequires:	boost-regex-devel
-BuildRequires:	boost-thread-devel
 BuildRequires:	fox-devel >= 1.4.0
 BuildRequires:	libpng-devel
 %{?with_ssh:BuildRequires:  	libssh-devel}
